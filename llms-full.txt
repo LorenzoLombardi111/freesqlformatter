@@ -1,0 +1,368 @@
+# freesqlformatter.app — Full Site Content
+
+> This file contains the complete text content of all pages on freesqlformatter.app, formatted in Markdown for AI crawlers.
+
+---
+
+# Page: Home — Free SQL Formatter Online
+
+## Free SQL Formatter Online — Format and Beautify SQL Queries
+
+freesqlformatter.app is a free online SQL formatter that instantly beautifies and indents your SQL queries. Paste any SQL statement — SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, or complex JOINs and subqueries — and get cleanly formatted output with proper indentation, keyword casing, and syntax highlighting. freesqlformatter.app runs entirely in your browser, so your SQL queries never leave your device. No sign-up, no tracking, no ads. Just paste, format, and copy. Whether you are debugging a long query, reviewing database code, or preparing SQL for documentation, freesqlformatter.app makes your SQL readable in one click.
+
+## How do I format SQL queries with freesqlformatter.app?
+
+Paste your SQL query into the input panel on the left side of freesqlformatter.app. Click the Format button or press Ctrl+Enter. Your SQL is instantly formatted with proper indentation, line breaks, and keyword casing in the output panel on the right. You can customize the indent size (2 spaces, 4 spaces, or tab) and keyword case (UPPER, lower, or as-is) using the toolbar. Click Copy to copy the formatted result to your clipboard.
+
+## Is freesqlformatter.app free to use?
+
+freesqlformatter.app is completely free with no sign-up required. All processing happens in your browser — your data never leaves your device. No ads, no tracking, no cookies.
+
+## What makes freesqlformatter.app different from other SQL formatters?
+
+Unlike many online SQL formatters, freesqlformatter.app processes your queries entirely in the browser with zero server calls. Your SQL is never uploaded anywhere. It also provides real-time syntax highlighting, supports minification, and works offline as a Progressive Web App. There are no ads, pop-ups, or account requirements — just a clean, fast formatting tool built by freesqlformatter.app for developers who value privacy.
+
+## Can I use freesqlformatter.app on my phone?
+
+freesqlformatter.app works on any device with a modern browser — desktop, tablet, or mobile. The interface adapts to your screen size automatically, stacking the input and output panels vertically on smaller screens.
+
+## Is my data safe with freesqlformatter.app?
+
+Yes. freesqlformatter.app processes everything locally in your browser using JavaScript. No data is uploaded to any server. Your SQL queries never leave your device.
+
+## Frequently Asked Questions
+
+### How do I format SQL online for free?
+Paste your SQL query into freesqlformatter.app and click Format. Your SQL is instantly formatted with proper indentation, keyword casing, and line breaks. No sign-up or payment required.
+
+### Does freesqlformatter.app support different SQL dialects?
+Yes. freesqlformatter.app handles standard SQL syntax including SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, JOIN, subqueries, CTEs, window functions, and more. It works with MySQL, PostgreSQL, SQLite, SQL Server, and Oracle syntax.
+
+### Can I minify SQL with freesqlformatter.app?
+Yes. Click the Minify button to compress your SQL into a single line by removing extra whitespace and line breaks. This is useful for embedding SQL in application code or reducing query size.
+
+### Is my SQL code safe when using an online formatter?
+Absolutely. freesqlformatter.app processes everything locally in your browser using JavaScript. Your SQL queries never leave your device — nothing is uploaded to any server. There is no tracking, no cookies, and no analytics.
+
+### What SQL statements does freesqlformatter.app support?
+freesqlformatter.app supports all common SQL statements: SELECT, INSERT INTO, UPDATE, DELETE, CREATE TABLE, ALTER TABLE, DROP, JOIN (INNER, LEFT, RIGHT, FULL, CROSS), subqueries, CTEs (WITH), UNION, CASE expressions, window functions, and more.
+
+### Does freesqlformatter.app work offline?
+Yes. freesqlformatter.app is a Progressive Web App (PWA) that works offline after your first visit. You can install it to your home screen or desktop for quick access without an internet connection.
+
+---
+
+# Page: freesqlformatter.app vs SQLFormat.org — SQL Formatter Comparison
+
+## freesqlformatter.app vs SQLFormat.org — Which SQL Formatter Should You Use?
+
+When searching for a free SQL formatter, SQLFormat.org is one of the most well-known options. Both freesqlformatter.app and SQLFormat.org format SQL queries, but they take fundamentally different approaches to privacy and processing.
+
+## How does freesqlformatter.app compare to SQLFormat.org?
+
+The biggest difference is where your SQL gets processed. freesqlformatter.app formats everything locally in your browser using JavaScript — your queries never leave your device. SQLFormat.org sends your SQL to their server for formatting, which means your database queries travel over the internet to a third-party server.
+
+For developers working with production database queries, sensitive data schemas, or proprietary business logic, this distinction matters. freesqlformatter.app ensures your SQL stays on your machine.
+
+## Feature Comparison
+
+| Feature | freesqlformatter.app | SQLFormat.org |
+|---------|---------------------|---------------|
+| Price | Free | Free |
+| Processing | Browser (local) | Server-side |
+| Privacy | No data uploaded | SQL sent to server |
+| Syntax highlighting | Yes | Yes |
+| SQL minification | Yes | No |
+| Keyword case options | UPPER, lower, as-is | UPPER, lower, capitalize |
+| Indent options | 2, 4 spaces, tab | 2, 4 spaces |
+| Offline support | Yes (PWA) | No |
+| Account required | No | No |
+| Ads | None | None |
+
+## When to choose freesqlformatter.app
+
+Choose freesqlformatter.app if you work with sensitive queries, want offline access, or prefer a tool that never uploads your data. freesqlformatter.app is ideal for developers who value privacy and speed.
+
+## When to choose SQLFormat.org
+
+SQLFormat.org has been around for many years and may handle certain edge cases in SQL formatting differently. If you need a specific formatting style that SQLFormat.org provides, it remains a solid choice — just be aware that your SQL is sent to their server.
+
+### Is freesqlformatter.app better than SQLFormat.org?
+For privacy-conscious developers, freesqlformatter.app is the better choice because it processes SQL entirely in your browser. SQLFormat.org sends your queries to a remote server. Both tools are free and produce well-formatted output.
+
+### Does SQLFormat.org upload my SQL to a server?
+Yes. SQLFormat.org processes SQL on their server, meaning your queries are transmitted over the internet. freesqlformatter.app avoids this entirely by formatting locally in your browser.
+
+### Can I use freesqlformatter.app offline?
+Yes. freesqlformatter.app is a Progressive Web App that works offline after your first visit. SQLFormat.org requires an internet connection since it processes SQL server-side.
+
+### Which formatter supports more SQL dialects?
+Both freesqlformatter.app and SQLFormat.org handle standard SQL syntax well, including MySQL, PostgreSQL, SQLite, and SQL Server syntax. freesqlformatter.app supports SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, JOINs, subqueries, CTEs, and window functions.
+
+### Is freesqlformatter.app free like SQLFormat.org?
+Yes. Both tools are completely free with no account required. freesqlformatter.app has no ads, no tracking, and no cookies.
+
+### Does freesqlformatter.app have SQL minification like SQLFormat.org?
+freesqlformatter.app includes a built-in SQL minifier that compresses queries into a single line. SQLFormat.org does not offer minification.
+
+---
+
+# Page: freesqlformatter.app vs DBeaver SQL Formatter
+
+## freesqlformatter.app vs DBeaver — Online vs Desktop SQL Formatting
+
+DBeaver is a popular open-source database management tool that includes a built-in SQL formatter. freesqlformatter.app offers SQL formatting directly in the browser without any installation. Here is how they compare for formatting SQL queries.
+
+## How does freesqlformatter.app compare to DBeaver's SQL formatter?
+
+DBeaver is a full database management application that you download and install on your computer. Its SQL formatter is one feature among many — query execution, schema browsing, data editing, and more. freesqlformatter.app focuses on one thing: formatting SQL quickly and privately in your browser.
+
+If you already use DBeaver for database management, its built-in formatter is convenient. But if you just need to quickly format a SQL query — especially on a machine where DBeaver is not installed — freesqlformatter.app is instantly accessible from any browser.
+
+## Feature Comparison
+
+| Feature | freesqlformatter.app | DBeaver |
+|---------|---------------------|---------|
+| Price | Free | Free (Community) / Paid (Pro) |
+| Installation | None (browser) | Desktop app download |
+| Access | Any device with a browser | Desktop only |
+| SQL formatting | Yes | Yes |
+| SQL minification | Yes | No |
+| Syntax highlighting | Yes | Yes |
+| Keyboard shortcuts | Yes | Yes |
+| Offline support | Yes (PWA) | Yes (desktop) |
+| Privacy | No data leaves browser | Local processing |
+| Query execution | No | Yes |
+| Database connection | No | Yes |
+
+## When to choose freesqlformatter.app
+
+Choose freesqlformatter.app when you need to format SQL quickly without installing anything, when you are on a shared or restricted computer, or when you want a lightweight tool focused purely on formatting. freesqlformatter.app loads instantly in any browser.
+
+## When to choose DBeaver
+
+Choose DBeaver when you need a full database management tool with query execution, schema browsing, and data editing alongside SQL formatting. DBeaver is a comprehensive desktop application for database professionals.
+
+### Is freesqlformatter.app as good as DBeaver for formatting SQL?
+For pure SQL formatting, freesqlformatter.app provides comparable output with customizable indentation, keyword casing, and syntax highlighting. DBeaver offers more database management features beyond formatting.
+
+### Do I need to install anything to use freesqlformatter.app?
+No. freesqlformatter.app runs entirely in your browser — just open the website and paste your SQL. DBeaver requires downloading and installing a desktop application.
+
+### Can freesqlformatter.app connect to my database like DBeaver?
+No. freesqlformatter.app is a formatting-only tool that processes SQL text. It does not connect to databases. Use DBeaver or similar tools for database connections and query execution.
+
+### Which is faster for formatting SQL — freesqlformatter.app or DBeaver?
+For one-off formatting tasks, freesqlformatter.app is faster because it requires no installation and loads instantly in your browser. DBeaver is better for continuous work within an integrated development environment.
+
+### Does freesqlformatter.app support the same SQL dialects as DBeaver?
+freesqlformatter.app handles standard SQL syntax including MySQL, PostgreSQL, SQLite, SQL Server, and Oracle syntax. DBeaver supports a wider range of database-specific syntax since it connects directly to databases.
+
+### Is my SQL safe in freesqlformatter.app compared to DBeaver?
+Both tools process SQL locally — freesqlformatter.app in your browser, DBeaver on your desktop. Neither uploads your queries to external servers.
+
+---
+
+# Page: Free SQL Beautifier Online — Pretty Print SQL Queries
+
+## Free SQL Beautifier Online — Make Your SQL Readable
+
+freesqlformatter.app is a free SQL beautifier that transforms messy, compressed, or poorly formatted SQL into clean, readable code. SQL beautification adds proper indentation, line breaks after clauses, consistent keyword casing, and logical grouping of query components. Whether you inherited a codebase with unformatted queries or need to clean up auto-generated SQL, freesqlformatter.app makes it readable in one click.
+
+## What is SQL beautification?
+
+SQL beautification is the process of reformatting SQL code to be more readable without changing its functionality. A beautified SQL query has each major clause (SELECT, FROM, WHERE, JOIN, ORDER BY, GROUP BY) on its own line, columns and conditions properly indented, keywords in consistent case, and logical operators aligned for easy scanning. freesqlformatter.app handles all of this automatically.
+
+## How to beautify SQL with freesqlformatter.app
+
+Open freesqlformatter.app in any browser. Paste your unformatted SQL into the input panel. The tool automatically formats it with proper indentation and line breaks. You can customize the output using the toolbar: choose between 2 spaces, 4 spaces, or tab indentation, and select UPPER, lower, or as-is keyword casing. Copy the beautified result with one click or download it as a .sql file.
+
+## Why beautify your SQL?
+
+Readable SQL is easier to debug, review, and maintain. When queries span dozens of lines with multiple JOINs, subqueries, and conditions, proper formatting makes the difference between a 5-minute fix and an hour of squinting at code. freesqlformatter.app beautifies SQL instantly so you can focus on the logic, not the layout.
+
+## SQL beautification examples
+
+A compressed query like `SELECT u.id,u.name,u.email FROM users u LEFT JOIN orders o ON u.id=o.user_id WHERE u.status='active' ORDER BY u.name` becomes:
+
+```sql
+SELECT
+    u.id,
+    u.name,
+    u.email
+FROM
+    users u
+LEFT JOIN
+    orders o
+    ON u.id = o.user_id
+WHERE
+    u.status = 'active'
+ORDER BY
+    u.name
+```
+
+freesqlformatter.app handles complex queries with subqueries, CTEs, CASE expressions, window functions, and multiple JOINs just as easily.
+
+### What is the difference between SQL formatting and SQL beautification?
+SQL formatting and SQL beautification are essentially the same thing — both refer to adding proper indentation, line breaks, and consistent styling to SQL code. freesqlformatter.app beautifies your SQL with customizable settings for indentation and keyword casing.
+
+### Can I beautify multiple SQL statements at once?
+Yes. freesqlformatter.app handles multiple SQL statements separated by semicolons. Each statement is formatted independently with proper spacing between them.
+
+### Does SQL beautification change how my query works?
+No. SQL beautification only changes the whitespace and formatting of your query. The actual SQL logic, table references, conditions, and results remain identical. freesqlformatter.app never modifies the functional content of your SQL.
+
+### What SQL syntax does the beautifier support?
+freesqlformatter.app beautifies all common SQL syntax: SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, ALTER TABLE, JOINs (INNER, LEFT, RIGHT, FULL, CROSS), subqueries, CTEs (WITH), UNION, CASE expressions, and window functions.
+
+### Is the SQL beautifier free to use?
+Yes. freesqlformatter.app is 100% free with no account required. There are no ads, no tracking, and no data uploads. Your SQL is beautified entirely in your browser.
+
+### Can I set my preferred beautification style?
+Yes. freesqlformatter.app lets you choose indent size (2 spaces, 4 spaces, or tab) and keyword case (UPPER, lower, or preserve original). Your preferences are saved in your browser for next time.
+
+---
+
+# Page: How to Format SQL Queries — Complete Guide
+
+## How to Format SQL Queries — A Developer's Guide to Readable SQL
+
+Well-formatted SQL is essential for code readability, debugging, and team collaboration. This guide covers SQL formatting best practices and shows you how to format SQL queries instantly using freesqlformatter.app. Whether you are a junior developer learning SQL or a senior engineer reviewing complex queries, consistent formatting makes your SQL easier to understand and maintain.
+
+## Why format SQL queries?
+
+Formatted SQL queries are dramatically easier to read, debug, and maintain. When each clause starts on its own line and columns are properly indented, you can quickly identify the tables involved, the join conditions, the filter criteria, and the sort order. In a team environment, consistent SQL formatting reduces code review time and prevents misunderstandings about query logic.
+
+## SQL formatting best practices
+
+### 1. Put major clauses on new lines
+Each major SQL clause — SELECT, FROM, WHERE, JOIN, GROUP BY, HAVING, ORDER BY, LIMIT — should start on its own line at the base indentation level. This creates a clear visual hierarchy of the query structure.
+
+### 2. Indent column lists and conditions
+Columns in the SELECT clause, conditions in the WHERE clause, and join conditions should be indented one level deeper than their parent clause. This visually groups related elements together.
+
+### 3. Use consistent keyword casing
+Choose UPPER CASE or lower case for SQL keywords and stick with it throughout your codebase. Most teams prefer UPPER CASE keywords because they stand out from table and column names. freesqlformatter.app supports UPPER, lower, and as-is casing.
+
+### 4. One column per line in SELECT
+When selecting multiple columns, put each on its own line. This makes it easy to add, remove, or comment out individual columns and produces cleaner diffs in version control.
+
+### 5. Align JOIN clauses
+Each JOIN should start on its own line at the same indentation level as FROM. The ON condition should be indented under its JOIN. This makes the table relationships immediately visible.
+
+### 6. Break long WHERE clauses
+When a WHERE clause has multiple conditions joined with AND or OR, put each condition on its own line. This prevents horizontal scrolling and makes it easy to spot each filter condition.
+
+## How to format SQL with freesqlformatter.app
+
+1. Open freesqlformatter.app in any browser
+2. Paste your SQL query into the input panel on the left
+3. Your SQL is automatically formatted in the output panel on the right
+4. Customize formatting using the toolbar (indent size, keyword case)
+5. Click Copy to copy the formatted result, or Download to save as a .sql file
+
+freesqlformatter.app processes everything in your browser — your SQL never leaves your device. You can also press Ctrl+Enter to format manually or Ctrl+Shift+M to minify.
+
+## Common SQL formatting mistakes to avoid
+
+- Putting an entire query on one line (makes debugging nearly impossible)
+- Inconsistent keyword casing (mixing SELECT with select in the same query)
+- No indentation (all clauses at the same level obscures query structure)
+- Tabs mixed with spaces (causes alignment issues across editors)
+- Missing spaces around operators (WHERE id=1 instead of WHERE id = 1)
+
+freesqlformatter.app fixes all of these automatically.
+
+### How do I format SQL automatically?
+Paste your SQL into freesqlformatter.app and it formats automatically with proper indentation, keyword casing, and line breaks. You can also press Ctrl+Enter to trigger formatting manually. No installation or account required.
+
+### What is the standard way to format SQL?
+The standard SQL formatting convention puts each major clause (SELECT, FROM, WHERE, etc.) on its own line, indents columns and conditions, uses UPPER CASE for keywords, and separates AND/OR conditions onto individual lines. freesqlformatter.app follows these conventions.
+
+### Should SQL keywords be uppercase or lowercase?
+Most SQL style guides recommend UPPER CASE keywords (SELECT, FROM, WHERE) because they visually distinguish SQL keywords from table and column names. freesqlformatter.app defaults to UPPER CASE but also supports lower case and as-is options.
+
+### How many spaces should I indent SQL?
+The most common SQL indentation is 4 spaces, which provides clear visual separation without excessive horizontal scrolling. Some teams prefer 2 spaces for more compact queries. freesqlformatter.app supports 2 spaces, 4 spaces, and tab indentation.
+
+### Can I format stored procedures and functions?
+freesqlformatter.app formats the SQL statements within stored procedures and functions, including SELECT, INSERT, UPDATE, DELETE, and CREATE TABLE statements. It handles the core SQL formatting; procedure-specific syntax (DECLARE, BEGIN/END blocks) is preserved as-is.
+
+### Is there a keyboard shortcut to format SQL?
+Yes. In freesqlformatter.app, press Ctrl+Enter (or Cmd+Enter on Mac) to format your SQL. Press Ctrl+Shift+M to minify. The tool also auto-formats as you type with a short delay.
+
+---
+
+# Page: Free SQL Minifier Online — Compress SQL Queries
+
+## Free SQL Minifier Online — Compress SQL to a Single Line
+
+freesqlformatter.app includes a built-in SQL minifier that compresses your SQL queries by removing all unnecessary whitespace, line breaks, and comments. SQL minification produces a compact single-line query that is useful for embedding in application code, reducing payload size in API calls, or storing queries efficiently in configuration files.
+
+## What is SQL minification?
+
+SQL minification is the opposite of SQL formatting. While formatting adds indentation and line breaks for readability, minification removes all extra whitespace to produce the most compact representation of a query. The minified SQL is functionally identical to the original — it returns the same results when executed against your database.
+
+## How to minify SQL with freesqlformatter.app
+
+Open freesqlformatter.app and paste your SQL query into the input panel. Click the Minify button in the toolbar (or press Ctrl+Shift+M). Your SQL is instantly compressed into a single line with minimal whitespace. Copy the result with one click or download it as a .sql file.
+
+## When to use SQL minification
+
+### Embedding SQL in application code
+When SQL queries are stored as strings in Python, JavaScript, Java, or other languages, minified SQL takes up less space and avoids multi-line string formatting issues. A single-line query is easier to assign to a variable.
+
+### Reducing API payload size
+If your application sends SQL queries over an API (for example, to a query service), minified SQL reduces the payload size. This can improve performance for applications that execute many queries.
+
+### Log file optimization
+Minified SQL queries take up less space in log files while remaining fully functional. Each query fits on a single log line, making it easier to parse logs programmatically.
+
+### Configuration files
+When storing queries in YAML, JSON, or other configuration files, minified SQL avoids multi-line formatting complexities and escaping issues.
+
+## Minification example
+
+A formatted query:
+```sql
+SELECT
+    u.id,
+    u.name,
+    u.email,
+    COUNT(o.id) AS order_count
+FROM
+    users u
+LEFT JOIN
+    orders o ON u.id = o.user_id
+WHERE
+    u.status = 'active'
+GROUP BY
+    u.id, u.name, u.email
+ORDER BY
+    order_count DESC
+```
+
+Becomes:
+```
+SELECT u.id, u.name, u.email, COUNT(o.id) AS order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.status = 'active' GROUP BY u.id, u.name, u.email ORDER BY order_count DESC
+```
+
+freesqlformatter.app preserves string literals and handles all SQL syntax correctly during minification.
+
+### What does SQL minification do?
+SQL minification removes all unnecessary whitespace, line breaks, indentation, and comments from a SQL query, producing a compact single-line version. The minified query is functionally identical to the original. freesqlformatter.app minifies SQL instantly in your browser.
+
+### Does SQL minification change query results?
+No. SQL minification only removes whitespace and formatting. The query logic, table references, conditions, and results are completely unchanged. Your database will return identical results for both formatted and minified versions.
+
+### When should I minify SQL instead of formatting it?
+Minify SQL when embedding queries in application code, sending them over APIs, storing them in configuration files, or writing to log files. Format SQL when reading, reviewing, debugging, or collaborating on queries with other developers.
+
+### Can I minify multiple SQL statements?
+Yes. freesqlformatter.app handles multiple SQL statements separated by semicolons. Each statement is minified while preserving the semicolon separators.
+
+### Does the minifier remove SQL comments?
+Yes. freesqlformatter.app removes both single-line (--) and multi-line (/* */) comments during minification, since comments add no functional value to a minified query.
+
+### Is the SQL minifier free?
+Yes. The SQL minifier is a built-in feature of freesqlformatter.app. It is completely free with no account required, and your SQL never leaves your browser.

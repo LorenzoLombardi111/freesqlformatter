@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SQL Minifier Online — Compress SQL Queries | freesqlformatter.app</title>
+    <meta name="description" content="Minify SQL queries instantly in your browser. Remove whitespace, comments, and line breaks to compress SQL for embedding, APIs, and logs.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freesqlformatter.app/pages/sql-minifier">
+    <meta name="theme-color" content="#faf9f6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free SQL Minifier Online — Compress SQL Queries | freesqlformatter.app">
+    <meta property="og:description" content="Minify SQL queries instantly in your browser. Remove whitespace, comments, and line breaks to compress SQL for embedding, APIs, and logs.">
+    <meta property="og:image" content="https://freesqlformatter.app/og-image.svg">
+    <meta property="og:url" content="https://freesqlformatter.app/pages/sql-minifier">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free SQL Minifier Online — Compress SQL Queries | freesqlformatter.app">
+    <meta name="twitter:description" content="Minify SQL queries instantly in your browser. Remove whitespace, comments, and line breaks to compress SQL for embedding, APIs, and logs.">
+    <meta name="twitter:image" content="https://freesqlformatter.app/og-image.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Free SQL Minifier Online — Compress SQL Queries",
+        "description": "Minify SQL queries instantly in your browser. Remove whitespace, comments, and line breaks to compress SQL for embedding, APIs, and logs.",
+        "url": "https://freesqlformatter.app/pages/sql-minifier",
+        "publisher": {
+            "@type": "Organization",
+            "name": "freesqlformatter.app",
+            "url": "https://freesqlformatter.app/"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does SQL minification do?",
+                "acceptedAnswer": { "@type": "Answer", "text": "SQL minification removes unnecessary whitespace, line breaks, indentation, and comments from your SQL queries. The result is a single-line, compact version of the same query that executes identically but takes up less space. This is useful when embedding SQL in application code, sending queries through APIs, or storing them in configuration files." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does minifying SQL change how the query works?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Minification only removes formatting characters that have no effect on query execution. The SQL engine receives the same instructions regardless of whether the query is beautifully indented or compressed to a single line. All keywords, table names, column references, and logic remain identical after minification." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it safe to minify SQL queries with freesqlformatter.app?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. freesqlformatter.app processes everything directly in your browser using JavaScript. Your SQL queries are never sent to any server, never stored, and never logged. You can even use the tool offline after the initial page load. There is no sign-up required and no data collection of any kind." }
+            },
+            {
+                "@type": "Question",
+                "name": "When should I minify SQL instead of formatting it?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Minify SQL when you need to embed queries in source code strings, pass them through REST API payloads, store them in JSON or YAML configuration files, include them in log output, or reduce the size of SQL files for transfer. Use formatted SQL when you need to read, debug, review, or collaborate on queries with other developers." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I minify SQL and then re-format it later?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. freesqlformatter.app supports both minification and formatting. You can paste minified SQL into the editor and click Format to expand it into readable, indented SQL. You can also paste formatted SQL and click Minify to compress it. The two operations are perfectly reversible since minification does not alter the query logic." }
+            },
+            {
+                "@type": "Question",
+                "name": "What SQL dialects does the minifier support?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The SQL minifier on freesqlformatter.app handles standard SQL as well as dialect-specific syntax for MySQL, PostgreSQL, SQLite, Microsoft SQL Server, Oracle, and BigQuery. It correctly preserves string literals, quoted identifiers, and dialect-specific keywords during minification so your queries remain valid after compression." }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freesqlformatter.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "SQL Minifier",
+                "item": "https://freesqlformatter.app/pages/sql-minifier"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #faf9f6;
+            --surface: #f4f2ee;
+            --border: #e8e4dd;
+            --text-primary: #1a1917;
+            --text-secondary: #6b6760;
+            --text-muted: #9e9b96;
+            --accent: #C49A2A;
+            --accent-hover: #A8831F;
+            --accent-text: #ffffff;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+            --font-body: 'Lora', serif;
+            --font-ui: 'DM Sans', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+        }
+        html.dark {
+            --bg: #141412;
+            --surface: #1e1c1a;
+            --border: #2e2b27;
+            --text-primary: #f0ede8;
+            --text-secondary: #9e9b96;
+            --text-muted: #6b6760;
+            --accent: #D4A835;
+            --accent-hover: #C49A2A;
+            --accent-text: #ffffff;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        html { font-size: 15px; line-height: 1.6; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+        }
+
+        /* Header */
+        .header {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-brand {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .theme-toggle {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 6px 12px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.15s ease;
+        }
+        .theme-toggle:hover { background: var(--border); }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+            padding: 12px 24px;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* Content */
+        .landing-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+        .landing-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        .landing-content h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        .landing-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .landing-content ul {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-left: 24px;
+            line-height: 1.7;
+        }
+        .landing-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Code blocks */
+        .code-example {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+        .code-example label {
+            display: block;
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .code-example pre {
+            font-family: var(--font-code);
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-primary);
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 32px;
+            text-align: center;
+            margin: 32px 0;
+        }
+        .cta-box h3 {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .cta-btn {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            background: var(--accent);
+            color: var(--accent-text);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .cta-btn:hover { background: var(--accent-hover); }
+        .cta-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        /* FAQ */
+        details {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 8px;
+        }
+        summary {
+            font-family: var(--font-ui);
+            font-weight: 500;
+            cursor: pointer;
+        }
+        details p { margin-top: 12px; margin-bottom: 0; }
+
+        /* Related Tools */
+        .related-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .related-tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .related-tool-card:hover { box-shadow: var(--shadow); }
+        .related-tool-card .tool-name {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .related-tool-card .tool-desc {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Footer */
+        .landing-footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* More tools footer */
+        .more-tools {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .more-tools-label {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        .more-tools-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .more-tools-links a {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        .more-tools-links a:hover {
+            background: var(--surface);
+        }
+
+        /* Badge */
+        .suite-badge {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            font-family: var(--font-ui);
+            font-size: 11px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .landing-content h1 { font-size: 24px; }
+            .landing-content h2 { font-size: 19px; }
+            .landing-content { padding: 24px 16px 48px; }
+            .breadcrumb { padding: 12px 16px; }
+            .cta-box { padding: 24px 16px; }
+            .code-example pre { font-size: 12px; }
+            .related-tools { grid-template-columns: 1fr; }
+            .suite-badge .badge-prefix { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="/" class="header-brand">freesqlformatter.app</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9788;</button>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="/">Home</a> &rsaquo; SQL Minifier
+    </nav>
+
+    <article class="landing-content">
+        <h1>Free SQL Minifier Online &mdash; Compress SQL Queries</h1>
+
+        <p>SQL minification compresses your queries by stripping out whitespace, line breaks, indentation, and comments, producing a compact single-line string that databases execute identically. freesqlformatter.app includes a one-click minify feature that runs entirely in your browser, so your SQL never leaves your device. Paste any query, hit Minify, and copy the compressed result. No sign-up, no server processing, no data collection. Whether you need to embed a complex JOIN in application code or send a query through a REST API body, freesqlformatter.app minifies it instantly.</p>
+
+        <h2>What is SQL minification?</h2>
+        <p>SQL minification is the process of removing all non-essential characters from a SQL query without changing its behavior. This includes extra spaces, tab characters, newlines, inline comments (<code>--</code>), and block comments (<code>/* ... */</code>). The resulting output is a single continuous line of SQL that executes exactly the same way as the original, but occupies far less space.</p>
+        <p>Think of it as the opposite of SQL formatting. While formatting adds structure for human readability, minification removes structure for machine efficiency. Both operations are lossless&mdash;the query logic is preserved perfectly in either direction.</p>
+
+        <h2>When should you minify SQL?</h2>
+        <p>There are several common scenarios where minified SQL is preferable to formatted SQL:</p>
+        <ul>
+            <li><strong>Embedding in application code</strong> &mdash; When you store SQL as a string in Python, JavaScript, Go, or Java, minified queries avoid multi-line string headaches and keep your source files clean.</li>
+            <li><strong>API payloads</strong> &mdash; REST and GraphQL endpoints that accept raw SQL benefit from compressed queries that reduce payload size and avoid JSON escaping issues with newlines.</li>
+            <li><strong>Log files</strong> &mdash; Single-line SQL is easier to parse in log aggregators like Elasticsearch, Datadog, or CloudWatch. Each query occupies one log line instead of dozens.</li>
+            <li><strong>Configuration files</strong> &mdash; YAML, JSON, and TOML config files that contain SQL queries are much cleaner with minified single-line strings.</li>
+            <li><strong>URL parameters</strong> &mdash; Some tools accept SQL in query strings. Minified SQL encodes more reliably and stays under URL length limits.</li>
+            <li><strong>Clipboard sharing</strong> &mdash; Pasting a minified query into Slack, email, or a ticket keeps the message compact and avoids formatting artifacts.</li>
+        </ul>
+
+        <h2>Before and after: SQL minification example</h2>
+        <p>Here is a typical formatted SQL query and what it looks like after minification with freesqlformatter.app:</p>
+
+        <div class="code-example">
+            <label>Before (formatted, 312 characters)</label>
+            <pre>SELECT
+    u.id,
+    u.name,
+    u.email,
+    COUNT(o.id) AS order_count
+FROM
+    users u
+    LEFT JOIN orders o ON o.user_id = u.id
+WHERE
+    u.created_at >= '2024-01-01'
+    AND u.status = 'active'
+GROUP BY
+    u.id, u.name, u.email
+HAVING
+    COUNT(o.id) > 5
+ORDER BY
+    order_count DESC;</pre>
+        </div>
+
+        <div class="code-example">
+            <label>After (minified, 189 characters)</label>
+            <pre>SELECT u.id,u.name,u.email,COUNT(o.id) AS order_count FROM users u LEFT JOIN orders o ON o.user_id=u.id WHERE u.created_at>='2024-01-01' AND u.status='active' GROUP BY u.id,u.name,u.email HAVING COUNT(o.id)>5 ORDER BY order_count DESC;</pre>
+        </div>
+
+        <p>The minified version is 40% smaller. For larger queries with comments and deep indentation, the reduction can exceed 60%.</p>
+
+        <h2>How to minify SQL with freesqlformatter.app</h2>
+        <p>Minifying SQL takes three steps:</p>
+        <ul>
+            <li><strong>Step 1:</strong> Open freesqlformatter.app in any browser.</li>
+            <li><strong>Step 2:</strong> Paste your SQL query into the editor.</li>
+            <li><strong>Step 3:</strong> Click the Minify button. The compressed SQL appears instantly, ready to copy.</li>
+        </ul>
+        <p>You can also paste minified SQL back into the editor and click Format to expand it into readable, indented SQL at any time. The two operations are fully reversible.</p>
+
+        <h2>Does minified SQL run faster?</h2>
+        <p>No. SQL databases parse and optimize queries identically regardless of whitespace. The performance of a minified query is exactly the same as the formatted version. Minification is purely about reducing the text size for storage, transport, and embedding, not about execution speed. If you want faster queries, focus on indexing, query plans, and schema design instead.</p>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>Try the SQL Minifier &mdash; Free, No Sign-Up</h3>
+            <p>All processing happens in your browser. Your SQL never leaves your device.</p>
+            <a href="/" class="cta-btn">Open SQL Minifier &rarr;</a>
+        </div>
+
+        <!-- FAQ -->
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+            <summary>What does SQL minification do?</summary>
+            <p>SQL minification removes unnecessary whitespace, line breaks, indentation, and comments from your SQL queries. The result is a single-line, compact version of the same query that executes identically but takes up less space. This is useful when embedding SQL in application code, sending queries through APIs, or storing them in configuration files.</p>
+        </details>
+
+        <details>
+            <summary>Does minifying SQL change how the query works?</summary>
+            <p>No. Minification only removes formatting characters that have no effect on query execution. The SQL engine receives the same instructions regardless of whether the query is beautifully indented or compressed to a single line. All keywords, table names, column references, and logic remain identical after minification.</p>
+        </details>
+
+        <details>
+            <summary>Is it safe to minify SQL queries with freesqlformatter.app?</summary>
+            <p>Yes. freesqlformatter.app processes everything directly in your browser using JavaScript. Your SQL queries are never sent to any server, never stored, and never logged. You can even use the tool offline after the initial page load. There is no sign-up required and no data collection of any kind.</p>
+        </details>
+
+        <details>
+            <summary>When should I minify SQL instead of formatting it?</summary>
+            <p>Minify SQL when you need to embed queries in source code strings, pass them through REST API payloads, store them in JSON or YAML configuration files, include them in log output, or reduce the size of SQL files for transfer. Use formatted SQL when you need to read, debug, review, or collaborate on queries with other developers.</p>
+        </details>
+
+        <details>
+            <summary>Can I minify SQL and then re-format it later?</summary>
+            <p>Absolutely. freesqlformatter.app supports both minification and formatting. You can paste minified SQL into the editor and click Format to expand it into readable, indented SQL. You can also paste formatted SQL and click Minify to compress it. The two operations are perfectly reversible since minification does not alter the query logic.</p>
+        </details>
+
+        <details>
+            <summary>What SQL dialects does the minifier support?</summary>
+            <p>The SQL minifier on freesqlformatter.app handles standard SQL as well as dialect-specific syntax for MySQL, PostgreSQL, SQLite, Microsoft SQL Server, Oracle, and BigQuery. It correctly preserves string literals, quoted identifiers, and dialect-specific keywords during minification so your queries remain valid after compression.</p>
+        </details>
+
+        <!-- Related Tools -->
+        <h2>More Free Tools from Freesuite</h2>
+        <div class="related-tools">
+            <a href="https://freejsonformatter.app" class="related-tool-card">
+                <div class="tool-name">freejsonformatter.app</div>
+                <div class="tool-desc">Format and validate JSON</div>
+            </a>
+            <a href="https://freebase64.app" class="related-tool-card">
+                <div class="tool-name">freebase64.app</div>
+                <div class="tool-desc">Base64 encoder and decoder</div>
+            </a>
+            <a href="https://freecaseconverter.app" class="related-tool-card">
+                <div class="tool-name">freecaseconverter.app</div>
+                <div class="tool-desc">Convert text between cases</div>
+            </a>
+            <a href="https://freepasswordgenerator.app" class="related-tool-card">
+                <div class="tool-name">freepasswordgenerator.app</div>
+                <div class="tool-desc">Generate secure passwords</div>
+            </a>
+            <a href="https://freewordcounter.app" class="related-tool-card">
+                <div class="tool-name">freewordcounter.app</div>
+                <div class="tool-desc">Count words and characters</div>
+            </a>
+            <a href="https://freenotepad.app" class="related-tool-card">
+                <div class="tool-name">freenotepad.app</div>
+                <div class="tool-desc">Quick browser-based notepad</div>
+            </a>
+        </div>
+    </article>
+
+    <footer class="landing-footer">
+        &copy; freesqlformatter.app
+        <div class="more-tools">
+            <div class="more-tools-label">More free tools from Freesuite</div>
+            <div class="more-tools-links">
+                <a href="https://freejsonformatter.app">JSON Formatter</a>
+                <a href="https://freebase64.app">Base64 Encoder</a>
+                <a href="https://freecaseconverter.app">Case Converter</a>
+                <a href="https://freepasswordgenerator.app">Password Generator</a>
+                <a href="https://freewordcounter.app">Word Counter</a>
+                <a href="https://freenotepad.app">Notepad</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener">
+        <span class="badge-prefix">by </span>freesuite.app
+    </a>
+
+    <script>
+    (() => {
+        const toggle = document.getElementById('themeToggle');
+        const getTheme = () => localStorage.getItem('suite_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const apply = (t) => {
+            document.documentElement.classList.toggle('dark', t === 'dark');
+            toggle.textContent = t === 'dark' ? '\u{1F319}' : '\u2600\uFE0F';
+            localStorage.setItem('suite_theme', t);
+        };
+        apply(getTheme());
+        toggle.addEventListener('click', () => apply(document.documentElement.classList.contains('dark') ? 'light' : 'dark'));
+    })();
+    </script>
+</body>
+</html>

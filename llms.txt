@@ -1,0 +1,47 @@
+# freesqlformatter.app
+
+> Free online SQL formatter and beautifier. Format, indent, and highlight SQL queries instantly in your browser.
+
+## What it does
+SQL Formatter is a free, browser-based tool that formats and beautifies SQL queries with proper indentation, keyword casing, and syntax highlighting. All processing happens locally in your browser — no data is uploaded to any server.
+
+## Key facts
+- 100% free, no sign-up required
+- Works offline (PWA)
+- Privacy-first: zero tracking, no cookies, no analytics
+- Works on desktop, tablet, and mobile
+- Part of the Freesuite collection (freesuite.app)
+
+## Features
+- SQL formatting with customizable indentation (2 spaces, 4 spaces, tab)
+- Keyword case control (UPPER, lower, as-is)
+- SQL minification (compress to single line)
+- Syntax highlighting with color-coded output
+- Support for SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, JOINs, subqueries, CTEs, window functions
+- Copy to clipboard and download as .sql file
+- Auto-format on paste with debounced input
+- Keyboard shortcuts (Ctrl+Enter to format, Ctrl+Shift+M to minify)
+
+## Comparisons
+- vs SQLFormat.org: freesqlformatter.app is free and processes SQL entirely in-browser with no server uploads, SQLFormat.org sends queries to their server
+- vs DBeaver: freesqlformatter.app requires no installation and works instantly in any browser, DBeaver requires downloading a desktop application
+
+## Related tools
+- freejsonformatter.app — JSON Formatter & Validator
+- freebase64.app — Base64 Encoder/Decoder
+- freeregextester.app — Regex Tester
+- freecaseconverter.app — Case Converter
+
+## Pages
+- [Home — SQL Formatter](https://freesqlformatter.app/)
+- [freesqlformatter.app vs SQLFormat.org](https://freesqlformatter.app/pages/vs-sqlformat): Side-by-side comparison of freesqlformatter.app and SQLFormat.org
+- [freesqlformatter.app vs DBeaver SQL Formatter](https://freesqlformatter.app/pages/vs-dbeaver): Comparison with DBeaver's built-in SQL formatter
+- [Free SQL Beautifier Online](https://freesqlformatter.app/pages/sql-beautifier): Beautify and pretty-print SQL queries
+- [How to Format SQL Queries](https://freesqlformatter.app/pages/how-to-format-sql): Step-by-step guide to formatting SQL
+- [Free SQL Minifier Online](https://freesqlformatter.app/pages/sql-minifier): Compress SQL queries into a single line
+
+## Full Content
+For the complete text content of all pages, see [llms-full.txt](https://freesqlformatter.app/llms-full.txt).
+
+## URL
+https://freesqlformatter.app/

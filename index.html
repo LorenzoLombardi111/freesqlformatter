@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SQL Formatter Online — freesqlformatter.app</title>
+    <meta name="description" content="Free SQL formatter and beautifier. Format, indent, and highlight SQL queries instantly in your browser. No sign-up, no data uploaded.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freesqlformatter.app/">
+    <meta name="theme-color" content="#faf9f6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free SQL Formatter Online — freesqlformatter.app">
+    <meta property="og:description" content="Free SQL formatter and beautifier. Format, indent, and highlight SQL queries instantly in your browser. No sign-up, no data uploaded.">
+    <meta property="og:image" content="https://freesqlformatter.app/og-image.svg">
+    <meta property="og:url" content="https://freesqlformatter.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free SQL Formatter Online — freesqlformatter.app">
+    <meta name="twitter:description" content="Free SQL formatter and beautifier. Format, indent, and highlight SQL queries instantly in your browser. No sign-up, no data uploaded.">
+    <meta name="twitter:image" content="https://freesqlformatter.app/og-image.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "freesqlformatter.app",
+        "description": "Free SQL formatter and beautifier. Format, indent, and highlight SQL queries instantly in your browser.",
+        "url": "https://freesqlformatter.app/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I format SQL online for free?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Paste your SQL query into freesqlformatter.app and click Format. Your SQL is instantly formatted with proper indentation, keyword casing, and line breaks. No sign-up or payment required." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does freesqlformatter.app support different SQL dialects?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. freesqlformatter.app handles standard SQL syntax including SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, JOIN, subqueries, CTEs, window functions, and more. It works with MySQL, PostgreSQL, SQLite, SQL Server, and Oracle syntax." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I minify SQL with freesqlformatter.app?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click the Minify button to compress your SQL into a single line by removing extra whitespace and line breaks. This is useful for embedding SQL in application code or reducing query size." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my SQL code safe when using an online formatter?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. freesqlformatter.app processes everything locally in your browser using JavaScript. Your SQL queries never leave your device — nothing is uploaded to any server. There is no tracking, no cookies, and no analytics." }
+            },
+            {
+                "@type": "Question",
+                "name": "What SQL statements does freesqlformatter.app support?",
+                "acceptedAnswer": { "@type": "Answer", "text": "freesqlformatter.app supports all common SQL statements: SELECT, INSERT INTO, UPDATE, DELETE, CREATE TABLE, ALTER TABLE, DROP, JOIN (INNER, LEFT, RIGHT, FULL, CROSS), subqueries, CTEs (WITH), UNION, CASE expressions, window functions, and more." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does freesqlformatter.app work offline?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. freesqlformatter.app is a Progressive Web App (PWA) that works offline after your first visit. You can install it to your home screen or desktop for quick access without an internet connection." }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freesqlformatter.app/"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* ===== CSS Reset ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== CSS Variables — Light Mode ===== */
+        :root {
+            --bg: #faf9f6;
+            --surface: #f4f2ee;
+            --border: #e8e4dd;
+            --text-primary: #1a1917;
+            --text-secondary: #6b6760;
+            --text-muted: #9e9b96;
+            --accent: #C49A2A;
+            --accent-hover: #A8831F;
+            --accent-text: #ffffff;
+            --destructive: #c0392b;
+            --success: #27ae60;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+
+            --font-body: 'Lora', serif;
+            --font-ui: 'DM Sans', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+
+            /* Syntax highlighting */
+            --syn-keyword: #7c3aed;
+            --syn-string: #059669;
+            --syn-number: #d97706;
+            --syn-comment: #9e9b96;
+            --syn-function: #2563eb;
+            --syn-operator: #c0392b;
+            --syn-paren: #6b6760;
+        }
+
+        /* ===== Dark Mode ===== */
+        html.dark {
+            --bg: #141412;
+            --surface: #1e1c1a;
+            --border: #2e2b27;
+            --text-primary: #f0ede8;
+            --text-secondary: #9e9b96;
+            --text-muted: #6b6760;
+            --accent: #D4A835;
+            --accent-hover: #C49A2A;
+            --accent-text: #ffffff;
+            --success: #2ecc71;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+
+            --syn-keyword: #a78bfa;
+            --syn-string: #34d399;
+            --syn-number: #fbbf24;
+            --syn-comment: #6b6760;
+            --syn-function: #60a5fa;
+            --syn-operator: #f87171;
+            --syn-paren: #9e9b96;
+        }
+
+        /* ===== Base ===== */
+        html { font-size: 15px; line-height: 1.6; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ===== Header ===== */
+        .header {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            flex-shrink: 0;
+        }
+        .header-brand {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ===== Theme Toggle ===== */
+        .theme-toggle {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 6px 12px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .theme-toggle:hover { background: var(--border); }
+
+        /* ===== Buttons ===== */
+        .btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-primary { background: var(--accent); color: var(--accent-text); }
+        .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
+        .btn-lg { padding: 12px 24px; font-size: 15px; font-weight: 600; }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .btn-secondary:hover:not(:disabled) { background: var(--surface); }
+        .btn-destructive {
+            background: transparent;
+            border: 1px solid var(--destructive);
+            color: var(--destructive);
+        }
+        .btn-destructive:hover:not(:disabled) { background: var(--surface); }
+
+        /* ===== Toolbar ===== */
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toolbar-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+        }
+        .toolbar-label {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .toolbar select {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 6px 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .toolbar select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(196,154,42,0.12);
+        }
+
+        /* ===== Toggle Buttons ===== */
+        .toggle-group { display: flex; gap: 4px; }
+        .toggle-btn {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: var(--bg);
+            color: var(--text-secondary);
+            transition: all 0.15s ease;
+        }
+        .toggle-btn.active {
+            background: var(--accent);
+            color: var(--accent-text);
+        }
+
+        /* ===== Editor Layout ===== */
+        .editor-wrap {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            min-height: 0;
+        }
+        .editor-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .editor-panel + .editor-panel {
+            border-left: 1px solid var(--border);
+        }
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            flex-shrink: 0;
+        }
+        .panel-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .panel-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .panel-btn {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .panel-btn:hover { background: var(--bg); color: var(--text-primary); }
+
+        /* ===== Input Editor ===== */
+        .sql-input {
+            flex: 1;
+            width: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+            padding: 16px;
+            font-family: var(--font-code);
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg);
+            tab-size: 4;
+        }
+        .sql-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* ===== Output Panel ===== */
+        .sql-output {
+            flex: 1;
+            overflow: auto;
+            padding: 16px;
+            font-family: var(--font-code);
+            font-size: 13px;
+            line-height: 1.6;
+            background: var(--bg);
+            white-space: pre;
+        }
+        .sql-output .empty-state {
+            color: var(--text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            white-space: normal;
+        }
+
+        /* ===== Syntax Highlighting ===== */
+        .syn-keyword { color: var(--syn-keyword); font-weight: 500; }
+        .syn-string { color: var(--syn-string); }
+        .syn-number { color: var(--syn-number); }
+        .syn-comment { color: var(--syn-comment); font-style: italic; }
+        .syn-function { color: var(--syn-function); }
+        .syn-operator { color: var(--syn-operator); }
+        .syn-paren { color: var(--syn-paren); }
+
+        /* ===== Status Bar ===== */
+        .status-bar {
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .status-bar span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ===== Freesuite Badge ===== */
+        .suite-badge {
+            position: fixed;
+            bottom: 40px;
+            right: 16px;
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        /* ===== Toast ===== */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--text-primary);
+            color: var(--bg);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.15s ease;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* ===== Upgrade Prompt ===== */
+        .upgrade-prompt {
+            border-top: 1px solid var(--border);
+            padding: 12px 16px;
+            background: var(--surface);
+            flex-shrink: 0;
+        }
+        .upgrade-prompt .upgrade-title {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .upgrade-prompt .upgrade-desc {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .upgrade-prompt .upgrade-link {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-top: 4px;
+            display: inline-block;
+        }
+
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* ===== SEO Content (below fold) ===== */
+        .seo-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px;
+            font-family: var(--font-body);
+            color: var(--text-primary);
+        }
+        .seo-content h1 {
+            font-family: var(--font-body);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .seo-content h2 {
+            font-family: var(--font-body);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        .seo-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .seo-content details {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 8px;
+        }
+        .seo-content summary {
+            font-family: var(--font-ui);
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+        .seo-content details p {
+            margin-top: 12px;
+            margin-bottom: 0;
+        }
+        .seo-footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .more-tools {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .more-tools-label {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        .more-tools-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .more-tools-links a {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        .more-tools-links a:hover { background: var(--surface); }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 768px) {
+            .suite-badge .badge-prefix { display: none; }
+            .editor-wrap { flex-direction: column; }
+            .editor-panel + .editor-panel { border-left: none; border-top: 1px solid var(--border); }
+            .toolbar { gap: 6px; padding: 8px 12px; }
+            .toolbar-divider { display: none; }
+            .header-actions .btn-secondary span.desktop-only { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="/" class="header-brand">freesqlformatter.app</a>
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">☀️</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="toolbar-group">
+            <button class="btn btn-primary" id="formatBtn">Format</button>
+            <button class="btn btn-secondary" id="minifyBtn">Minify</button>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group">
+            <span class="toolbar-label">Indent</span>
+            <select id="indentSelect">
+                <option value="2">2 spaces</option>
+                <option value="4" selected>4 spaces</option>
+                <option value="tab">Tab</option>
+            </select>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group">
+            <span class="toolbar-label">Keywords</span>
+            <div class="toggle-group">
+                <button class="toggle-btn active" data-case="upper">UPPER</button>
+                <button class="toggle-btn" data-case="lower">lower</button>
+                <button class="toggle-btn" data-case="preserve">As-is</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="editor-wrap">
+        <!-- Input Panel -->
+        <div class="editor-panel">
+            <div class="panel-header">
+                <span class="panel-title">Input</span>
+                <div class="panel-actions">
+                    <button class="panel-btn" id="pasteBtn">Paste</button>
+                    <button class="panel-btn" id="sampleBtn">Sample</button>
+                    <button class="panel-btn" id="clearBtn">Clear</button>
+                </div>
+            </div>
+            <textarea class="sql-input" id="sqlInput" placeholder="Paste your SQL here..." spellcheck="false"></textarea>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="editor-panel">
+            <div class="panel-header">
+                <span class="panel-title">Output</span>
+                <div class="panel-actions">
+                    <button class="panel-btn" id="copyBtn">Copy</button>
+                    <button class="panel-btn" id="downloadBtn">Download</button>
+                </div>
+            </div>
+            <div class="sql-output" id="sqlOutput">
+                <span class="empty-state">Formatted SQL will appear here</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upgrade Prompt -->
+    <div class="upgrade-prompt" id="upgrade-prompt">
+        <div class="upgrade-title">🔒 Cloud Query Library</div>
+        <div class="upgrade-desc">Save and sync your formatted queries across devices</div>
+        <a href="https://freesuite.app" class="upgrade-link">Unlock with freesuite.app · $2.88/mo</a>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="status-bar">
+        <span id="statusLeft">Ready</span>
+        <span>All processing happens in your browser — nothing uploaded</span>
+    </footer>
+
+    <!-- Freesuite Badge -->
+    <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener">
+        <span class="badge-prefix">by </span>freesuite.app
+    </a>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+        <h1>Free SQL Formatter Online — Format and Beautify SQL Queries</h1>
+
+        <p>freesqlformatter.app is a free online SQL formatter that instantly beautifies and indents your SQL queries. Paste any SQL statement — SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, or complex JOINs and subqueries — and get cleanly formatted output with proper indentation, keyword casing, and syntax highlighting. freesqlformatter.app runs entirely in your browser, so your SQL queries never leave your device. No sign-up, no tracking, no ads. Just paste, format, and copy. Whether you are debugging a long query, reviewing database code, or preparing SQL for documentation, freesqlformatter.app makes your SQL readable in one click.</p>
+
+        <h2>How do I format SQL queries with freesqlformatter.app?</h2>
+        <p>Paste your SQL query into the input panel on the left side of freesqlformatter.app. Click the Format button or press Ctrl+Enter. Your SQL is instantly formatted with proper indentation, line breaks, and keyword casing in the output panel on the right. You can customize the indent size (2 spaces, 4 spaces, or tab) and keyword case (UPPER, lower, or as-is) using the toolbar. Click Copy to copy the formatted result to your clipboard.</p>
+
+        <h2>Is freesqlformatter.app free to use?</h2>
+        <p>freesqlformatter.app is completely free with no sign-up required. All processing happens in your browser — your data never leaves your device. No ads, no tracking, no cookies.</p>
+
+        <h2>What makes freesqlformatter.app different from other SQL formatters?</h2>
+        <p>Unlike many online SQL formatters, freesqlformatter.app processes your queries entirely in the browser with zero server calls. Your SQL is never uploaded anywhere. It also provides real-time syntax highlighting, supports minification, and works offline as a Progressive Web App. There are no ads, pop-ups, or account requirements — just a clean, fast formatting tool built by freesqlformatter.app for developers who value privacy.</p>
+
+        <h2>Can I use freesqlformatter.app on my phone?</h2>
+        <p>freesqlformatter.app works on any device with a modern browser — desktop, tablet, or mobile. The interface adapts to your screen size automatically, stacking the input and output panels vertically on smaller screens.</p>
+
+        <h2>Is my data safe with freesqlformatter.app?</h2>
+        <p>Yes. freesqlformatter.app processes everything locally in your browser using JavaScript. No data is uploaded to any server. Your SQL queries never leave your device.</p>
+
+        <!-- FAQ Section -->
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+            <summary>How do I format SQL online for free?</summary>
+            <p>Paste your SQL query into freesqlformatter.app and click Format. Your SQL is instantly formatted with proper indentation, keyword casing, and line breaks. No sign-up or payment required.</p>
+        </details>
+
+        <details>
+            <summary>Does freesqlformatter.app support different SQL dialects?</summary>
+            <p>Yes. freesqlformatter.app handles standard SQL syntax including SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, JOIN, subqueries, CTEs, window functions, and more. It works with MySQL, PostgreSQL, SQLite, SQL Server, and Oracle syntax.</p>
+        </details>
+
+        <details>
+            <summary>Can I minify SQL with freesqlformatter.app?</summary>
+            <p>Yes. Click the Minify button to compress your SQL into a single line by removing extra whitespace and line breaks. This is useful for embedding SQL in application code or reducing query size.</p>
+        </details>
+
+        <details>
+            <summary>Is my SQL code safe when using an online formatter?</summary>
+            <p>Absolutely. freesqlformatter.app processes everything locally in your browser using JavaScript. Your SQL queries never leave your device — nothing is uploaded to any server. There is no tracking, no cookies, and no analytics.</p>
+        </details>
+
+        <details>
+            <summary>What SQL statements does freesqlformatter.app support?</summary>
+            <p>freesqlformatter.app supports all common SQL statements: SELECT, INSERT INTO, UPDATE, DELETE, CREATE TABLE, ALTER TABLE, DROP, JOIN (INNER, LEFT, RIGHT, FULL, CROSS), subqueries, CTEs (WITH), UNION, CASE expressions, window functions, and more.</p>
+        </details>
+
+        <details>
+            <summary>Does freesqlformatter.app work offline?</summary>
+            <p>Yes. freesqlformatter.app is a Progressive Web App (PWA) that works offline after your first visit. You can install it to your home screen or desktop for quick access without an internet connection.</p>
+        </details>
+    </div>
+
+    <footer class="seo-footer">
+        &copy; freesqlformatter.app
+        <div class="more-tools">
+            <div class="more-tools-label">More free tools from Freesuite</div>
+            <div class="more-tools-links">
+                <a href="https://freejsonformatter.app">JSON Formatter</a>
+                <a href="https://freebase64.app">Base64 Encoder</a>
+                <a href="https://freeregextester.app">Regex Tester</a>
+                <a href="https://freecaseconverter.app">Case Converter</a>
+                <a href="https://freepasswordgenerator.app">Password Generator</a>
+                <a href="https://freewordcounter.app">Word Counter</a>
+                <a href="https://freenotepad.app">Notepad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    /* ===== Dark Mode ===== */
+    (() => {
+        const toggle = document.getElementById('themeToggle');
+        const icon = toggle.querySelector('.toggle-icon');
+
+        const getTheme = () => {
+            const stored = localStorage.getItem('suite_theme');
+            if (stored) return stored;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const applyTheme = (theme) => {
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+            localStorage.setItem('suite_theme', theme);
+        };
+
+        applyTheme(getTheme());
+
+        toggle.addEventListener('click', () => {
+            const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+    })();
+
+    /* ===== Toast ===== */
+    const showToast = (message) => {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    };
+
+    /* ===== Service Worker ===== */
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
+    /* ===== SQL Formatter Engine ===== */
+    (() => {
+        const input = document.getElementById('sqlInput');
+        const output = document.getElementById('sqlOutput');
+        const statusLeft = document.getElementById('statusLeft');
+
+        // SQL keywords
+        const KEYWORDS = new Set([
+            'SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'NOT', 'IN', 'BETWEEN', 'LIKE', 'IS',
+            'NULL', 'TRUE', 'FALSE', 'AS', 'ON', 'USING', 'JOIN', 'INNER', 'LEFT', 'RIGHT',
+            'OUTER', 'FULL', 'CROSS', 'NATURAL', 'INSERT', 'INTO', 'VALUES', 'UPDATE', 'SET',
+            'DELETE', 'CREATE', 'TABLE', 'ALTER', 'DROP', 'INDEX', 'VIEW', 'DATABASE', 'SCHEMA',
+            'IF', 'EXISTS', 'NOT', 'PRIMARY', 'KEY', 'FOREIGN', 'REFERENCES', 'CONSTRAINT',
+            'UNIQUE', 'CHECK', 'DEFAULT', 'AUTO_INCREMENT', 'SERIAL', 'CASCADE', 'RESTRICT',
+            'ORDER', 'BY', 'GROUP', 'HAVING', 'LIMIT', 'OFFSET', 'UNION', 'ALL', 'DISTINCT',
+            'CASE', 'WHEN', 'THEN', 'ELSE', 'END', 'BEGIN', 'COMMIT', 'ROLLBACK', 'TRANSACTION',
+            'WITH', 'RECURSIVE', 'WINDOW', 'OVER', 'PARTITION', 'ROWS', 'RANGE', 'FETCH',
+            'NEXT', 'ONLY', 'FOR', 'ASC', 'DESC', 'NULLS', 'FIRST', 'LAST', 'GRANT', 'REVOKE',
+            'TRUNCATE', 'EXPLAIN', 'ANALYZE', 'VACUUM', 'RETURNING', 'CONFLICT', 'DO', 'NOTHING',
+            'LATERAL', 'EXCEPT', 'INTERSECT', 'ANY', 'SOME', 'REPLACE', 'TEMPORARY', 'TEMP',
+            'INT', 'INTEGER', 'BIGINT', 'SMALLINT', 'TINYINT', 'FLOAT', 'DOUBLE', 'DECIMAL',
+            'NUMERIC', 'REAL', 'VARCHAR', 'CHAR', 'TEXT', 'BLOB', 'DATE', 'TIME', 'TIMESTAMP',
+            'DATETIME', 'BOOLEAN', 'BOOL', 'ENUM', 'JSON', 'JSONB', 'UUID', 'ARRAY',
+            'ADD', 'COLUMN', 'RENAME', 'TO', 'MODIFY', 'TYPE', 'CAST', 'CONVERT',
+            'TOP', 'PERCENT', 'ILIKE', 'SIMILAR', 'REGEXP', 'RLIKE'
+        ]);
+
+        const FUNCTIONS = new Set([
+            'COUNT', 'SUM', 'AVG', 'MIN', 'MAX', 'COALESCE', 'NULLIF', 'IFNULL', 'NVL',
+            'CONCAT', 'SUBSTRING', 'SUBSTR', 'TRIM', 'LTRIM', 'RTRIM', 'UPPER', 'LOWER',
+            'LENGTH', 'LEN', 'REPLACE', 'REVERSE', 'LEFT', 'RIGHT', 'LPAD', 'RPAD',
+            'ABS', 'CEIL', 'CEILING', 'FLOOR', 'ROUND', 'MOD', 'POWER', 'SQRT', 'SIGN',
+            'NOW', 'CURRENT_TIMESTAMP', 'CURRENT_DATE', 'CURRENT_TIME', 'GETDATE', 'SYSDATE',
+            'DATEADD', 'DATEDIFF', 'DATE_TRUNC', 'EXTRACT', 'YEAR', 'MONTH', 'DAY', 'HOUR',
+            'MINUTE', 'SECOND', 'TO_CHAR', 'TO_DATE', 'TO_NUMBER', 'STRFTIME',
+            'ROW_NUMBER', 'RANK', 'DENSE_RANK', 'NTILE', 'LAG', 'LEAD', 'FIRST_VALUE',
+            'LAST_VALUE', 'NTH_VALUE', 'CUME_DIST', 'PERCENT_RANK',
+            'STRING_AGG', 'ARRAY_AGG', 'GROUP_CONCAT', 'LISTAGG',
+            'GREATEST', 'LEAST', 'DECODE', 'IIF', 'ISNULL',
+            'EXISTS', 'CAST', 'CONVERT', 'TRY_CAST', 'TRY_CONVERT',
+            'JSON_EXTRACT', 'JSON_VALUE', 'JSON_QUERY', 'JSONB_EXTRACT_PATH'
+        ]);
+
+        // Major clause keywords that get their own line (no indent)
+        const MAJOR_CLAUSES = new Set([
+            'SELECT', 'FROM', 'WHERE', 'ORDER BY', 'GROUP BY', 'HAVING', 'LIMIT',
+            'OFFSET', 'UNION', 'UNION ALL', 'EXCEPT', 'INTERSECT', 'INSERT INTO',
+            'VALUES', 'UPDATE', 'SET', 'DELETE', 'DELETE FROM', 'CREATE TABLE',
+            'ALTER TABLE', 'DROP TABLE', 'CREATE INDEX', 'CREATE VIEW',
+            'WITH', 'RETURNING', 'FETCH', 'FOR'
+        ]);
+
+        // Join keywords
+        const JOIN_KEYWORDS = new Set([
+            'JOIN', 'INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'FULL JOIN',
+            'CROSS JOIN', 'LEFT OUTER JOIN', 'RIGHT OUTER JOIN', 'FULL OUTER JOIN',
+            'NATURAL JOIN', 'NATURAL LEFT JOIN', 'NATURAL RIGHT JOIN'
+        ]);
+
+        let settings = {
+            indent: '    ',
+            keywordCase: 'upper'
+        };
+
+        // Tokenizer
+        function tokenize(sql) {
+            const tokens = [];
+            let i = 0;
+            const len = sql.length;
+
+            while (i < len) {
+                // Whitespace
+                if (/\s/.test(sql[i])) {
+                    let start = i;
+                    while (i < len && /\s/.test(sql[i])) i++;
+                    tokens.push({ type: 'whitespace', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Single-line comment --
+                if (sql[i] === '-' && sql[i + 1] === '-') {
+                    let start = i;
+                    while (i < len && sql[i] !== '\n') i++;
+                    tokens.push({ type: 'comment', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Multi-line comment /* */
+                if (sql[i] === '/' && sql[i + 1] === '*') {
+                    let start = i;
+                    i += 2;
+                    while (i < len && !(sql[i] === '*' && sql[i + 1] === '/')) i++;
+                    i += 2;
+                    tokens.push({ type: 'comment', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Strings (single-quoted)
+                if (sql[i] === "'") {
+                    let start = i;
+                    i++;
+                    while (i < len) {
+                        if (sql[i] === "'" && sql[i + 1] === "'") { i += 2; continue; }
+                        if (sql[i] === "'") { i++; break; }
+                        i++;
+                    }
+                    tokens.push({ type: 'string', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Double-quoted identifiers
+                if (sql[i] === '"') {
+                    let start = i;
+                    i++;
+                    while (i < len && sql[i] !== '"') i++;
+                    i++;
+                    tokens.push({ type: 'identifier', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Backtick identifiers
+                if (sql[i] === '`') {
+                    let start = i;
+                    i++;
+                    while (i < len && sql[i] !== '`') i++;
+                    i++;
+                    tokens.push({ type: 'identifier', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Numbers
+                if (/\d/.test(sql[i]) || (sql[i] === '.' && i + 1 < len && /\d/.test(sql[i + 1]))) {
+                    let start = i;
+                    while (i < len && /[\d.]/.test(sql[i])) i++;
+                    if (i < len && /[eE]/.test(sql[i])) {
+                        i++;
+                        if (i < len && /[+-]/.test(sql[i])) i++;
+                        while (i < len && /\d/.test(sql[i])) i++;
+                    }
+                    tokens.push({ type: 'number', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Parentheses
+                if (sql[i] === '(') {
+                    tokens.push({ type: 'open_paren', value: '(' });
+                    i++;
+                    continue;
+                }
+                if (sql[i] === ')') {
+                    tokens.push({ type: 'close_paren', value: ')' });
+                    i++;
+                    continue;
+                }
+
+                // Comma
+                if (sql[i] === ',') {
+                    tokens.push({ type: 'comma', value: ',' });
+                    i++;
+                    continue;
+                }
+
+                // Semicolon
+                if (sql[i] === ';') {
+                    tokens.push({ type: 'semicolon', value: ';' });
+                    i++;
+                    continue;
+                }
+
+                // Operators
+                if (/[+\-*/%<>=!&|^~]/.test(sql[i])) {
+                    let start = i;
+                    // Multi-char operators
+                    const twoChar = sql.slice(i, i + 2);
+                    if (['!=', '<>', '<=', '>=', '||', '&&', '::', '<<', '>>', '->'].includes(twoChar)) {
+                        i += 2;
+                        if (sql[i] === '>' && sql.slice(start, i) === '->') { i++; } // ->>
+                    } else {
+                        i++;
+                    }
+                    tokens.push({ type: 'operator', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Bind param / variable
+                if (sql[i] === ':' || sql[i] === '@' || sql[i] === '$') {
+                    let start = i;
+                    i++;
+                    while (i < len && /[\w]/.test(sql[i])) i++;
+                    tokens.push({ type: 'variable', value: sql.slice(start, i) });
+                    continue;
+                }
+
+                // Words (keywords, identifiers, functions)
+                if (/[\w]/.test(sql[i])) {
+                    let start = i;
+                    while (i < len && /[\w.]/.test(sql[i])) i++;
+                    const word = sql.slice(start, i);
+                    const upper = word.toUpperCase();
+
+                    if (KEYWORDS.has(upper)) {
+                        tokens.push({ type: 'keyword', value: word });
+                    } else if (FUNCTIONS.has(upper)) {
+                        tokens.push({ type: 'function', value: word });
+                    } else {
+                        tokens.push({ type: 'word', value: word });
+                    }
+                    continue;
+                }
+
+                // Anything else
+                tokens.push({ type: 'other', value: sql[i] });
+                i++;
+            }
+
+            return tokens;
+        }
+
+        // Format SQL
+        function formatSQL(sql) {
+            if (!sql.trim()) return '';
+
+            const tokens = tokenize(sql);
+            const indent = settings.indent;
+            let result = '';
+            let depth = 0;
+            let lineStart = true;
+            let prevSignificant = null;
+
+            // Remove whitespace tokens for easier processing
+            const significant = tokens.filter(t => t.type !== 'whitespace');
+
+            function applyCase(word) {
+                if (settings.keywordCase === 'upper') return word.toUpperCase();
+                if (settings.keywordCase === 'lower') return word.toLowerCase();
+                return word;
+            }
+
+            function addNewline() {
+                result = result.trimEnd();
+                result += '\n' + indent.repeat(depth);
+                lineStart = true;
+            }
+
+            function addSpace() {
+                if (!lineStart && !result.endsWith(' ') && !result.endsWith('\n')) {
+                    result += ' ';
+                }
+            }
+
+            // Look ahead for compound keywords
+            function lookAhead(idx, count) {
+                const words = [];
+                let j = idx;
+                let found = 0;
+                while (j < significant.length && found < count) {
+                    if (significant[j].type === 'keyword') {
+                        words.push(significant[j].value.toUpperCase());
+                        found++;
+                    } else {
+                        break;
+                    }
+                    j++;
+                }
+                return words.join(' ');
+            }
+
+            for (let i = 0; i < significant.length; i++) {
+                const token = significant[i];
+                const nextToken = significant[i + 1];
+
+                switch (token.type) {
+                    case 'keyword': {
+                        const upper = token.value.toUpperCase();
+
+                        // Check for compound keywords
+                        let compound = '';
+                        let skip = 0;
+
+                        if (nextToken && nextToken.type === 'keyword') {
+                            const next2 = lookAhead(i, 3);
+                            const next1 = lookAhead(i, 2);
+
+                            if (JOIN_KEYWORDS.has(next2)) {
+                                compound = next2;
+                                skip = 2;
+                            } else if (JOIN_KEYWORDS.has(next1) || MAJOR_CLAUSES.has(next1)) {
+                                compound = next1;
+                                skip = 1;
+                            }
+                        }
+
+                        const kw = compound || upper;
+                        const kwFormatted = applyCase(compound || token.value);
+
+                        if (JOIN_KEYWORDS.has(kw)) {
+                            addNewline();
+                            result += kwFormatted;
+                            if (skip) {
+                                for (let s = 0; s < skip; s++) {
+                                    result += ' ' + applyCase(significant[i + 1 + s].value);
+                                }
+                                i += skip;
+                            }
+                            lineStart = false;
+                        } else if (kw === 'ON' || kw === 'USING') {
+                            addNewline();
+                            depth++;
+                            result += kwFormatted;
+                            lineStart = false;
+                            // ON gets extra indent for its condition, then back
+                        } else if (MAJOR_CLAUSES.has(kw)) {
+                            if (kw === 'UNION' || kw === 'UNION ALL' || kw === 'EXCEPT' || kw === 'INTERSECT') {
+                                depth = 0;
+                                addNewline();
+                                result += kwFormatted;
+                                if (skip) {
+                                    for (let s = 0; s < skip; s++) {
+                                        result += ' ' + applyCase(significant[i + 1 + s].value);
+                                    }
+                                    i += skip;
+                                }
+                                addNewline();
+                            } else {
+                                // Reset depth for major clauses (except first)
+                                if (result.length > 0 && kw !== 'WITH') {
+                                    depth = 0;
+                                    addNewline();
+                                }
+                                result += kwFormatted;
+                                if (skip) {
+                                    for (let s = 0; s < skip; s++) {
+                                        result += ' ' + applyCase(significant[i + 1 + s].value);
+                                    }
+                                    i += skip;
+                                }
+                                depth = 1;
+                                addNewline();
+                            }
+                            lineStart = false;
+                        } else if (kw === 'AND' || kw === 'OR') {
+                            addNewline();
+                            result += kwFormatted;
+                            lineStart = false;
+                        } else if (kw === 'CASE') {
+                            addSpace();
+                            result += kwFormatted;
+                            depth++;
+                            lineStart = false;
+                        } else if (kw === 'WHEN' || kw === 'ELSE') {
+                            addNewline();
+                            result += kwFormatted;
+                            lineStart = false;
+                        } else if (kw === 'THEN') {
+                            addSpace();
+                            result += kwFormatted;
+                            lineStart = false;
+                        } else if (kw === 'END') {
+                            depth = Math.max(0, depth - 1);
+                            addNewline();
+                            result += kwFormatted;
+                            lineStart = false;
+                        } else {
+                            addSpace();
+                            result += kwFormatted;
+                            lineStart = false;
+                        }
+
+                        // Reset depth after ON clause when we hit next major keyword
+                        if (kw === 'ON' || kw === 'USING') {
+                            // depth was increased, it'll be reset at next major clause
+                        }
+                        break;
+                    }
+
+                    case 'function': {
+                        addSpace();
+                        result += token.value.toUpperCase();
+                        lineStart = false;
+                        break;
+                    }
+
+                    case 'open_paren': {
+                        // Check if this is a subquery
+                        if (nextToken && nextToken.type === 'keyword' && ['SELECT', 'WITH'].includes(nextToken.value.toUpperCase())) {
+                            addSpace();
+                            result += '(';
+                            depth++;
+                            addNewline();
+                        } else {
+                            result += '(';
+                        }
+                        lineStart = false;
+                        break;
+                    }
+
+                    case 'close_paren': {
+                        // Check if closing a subquery
+                        const prevNonSpace = prevSignificant;
+                        result = result.trimEnd();
+                        // Decrease depth if we were in a subquery
+                        if (depth > 0) {
+                            depth--;
+                        }
+                        addNewline();
+                        result += ')';
+                        lineStart = false;
+                        break;
+                    }
+
+                    case 'comma': {
+                        result += ',';
+                        addNewline();
+                        lineStart = false;
+                        break;
+                    }
+
+                    case 'semicolon': {
+                        result += ';';
+                        depth = 0;
+                        result += '\n';
+                        lineStart = true;
+                        break;
+                    }
+
+                    case 'comment': {
+                        addSpace();
+                        result += token.value;
+                        lineStart = false;
+                        break;
+                    }
+
+                    case 'string':
+                    case 'number':
+                    case 'identifier':
+                    case 'word':
+                    case 'variable': {
+                        addSpace();
+                        result += token.value;
+                        lineStart = false;
+                        break;
+                    }
+
+                    case 'operator': {
+                        if (token.value === '*' && prevSignificant && prevSignificant.type === 'keyword' && prevSignificant.value.toUpperCase() === 'SELECT') {
+                            addSpace();
+                            result += token.value;
+                        } else if (token.value === '.' || (prevSignificant && prevSignificant.value === '.')) {
+                            result += token.value;
+                        } else {
+                            addSpace();
+                            result += token.value;
+                        }
+                        lineStart = false;
+                        break;
+                    }
+
+                    default: {
+                        result += token.value;
+                        lineStart = false;
+                    }
+                }
+
+                prevSignificant = token;
+            }
+
+            return result.trim();
+        }
+
+        // Minify SQL
+        function minifySQL(sql) {
+            if (!sql.trim()) return '';
+            const tokens = tokenize(sql);
+            let result = '';
+            let prevType = null;
+
+            for (const token of tokens) {
+                if (token.type === 'whitespace') {
+                    // Only add a single space between tokens that need separation
+                    if (prevType && !['open_paren', 'comma'].includes(prevType)) {
+                        result += ' ';
+                    }
+                    continue;
+                }
+                if (token.type === 'comment') continue;
+
+                if (token.type === 'keyword') {
+                    result += settings.keywordCase === 'upper' ? token.value.toUpperCase() :
+                              settings.keywordCase === 'lower' ? token.value.toLowerCase() :
+                              token.value;
+                } else {
+                    result += token.value;
+                }
+                prevType = token.type;
+            }
+
+            return result.replace(/\s+/g, ' ').trim();
+        }
+
+        // Syntax highlighting (for display)
+        function highlightSQL(sql) {
+            const tokens = tokenize(sql);
+            let html = '';
+
+            for (const token of tokens) {
+                const escaped = token.value
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+
+                switch (token.type) {
+                    case 'keyword':
+                        html += `<span class="syn-keyword">${escaped}</span>`;
+                        break;
+                    case 'function':
+                        html += `<span class="syn-function">${escaped}</span>`;
+                        break;
+                    case 'string':
+                        html += `<span class="syn-string">${escaped}</span>`;
+                        break;
+                    case 'number':
+                        html += `<span class="syn-number">${escaped}</span>`;
+                        break;
+                    case 'comment':
+                        html += `<span class="syn-comment">${escaped}</span>`;
+                        break;
+                    case 'operator':
+                        html += `<span class="syn-operator">${escaped}</span>`;
+                        break;
+                    case 'open_paren':
+                    case 'close_paren':
+                        html += `<span class="syn-paren">${escaped}</span>`;
+                        break;
+                    default:
+                        html += escaped;
+                }
+            }
+
+            return html;
+        }
+
+        // Update status bar
+        function updateStatus(sql) {
+            const chars = sql.length;
+            const lines = sql ? sql.split('\n').length : 0;
+            const queries = sql.split(';').filter(q => q.trim()).length;
+            statusLeft.textContent = `${chars.toLocaleString()} chars · ${lines} lines · ${queries} ${queries === 1 ? 'query' : 'queries'}`;
+        }
+
+        // Last formatted result for copy/download
+        let lastResult = '';
+
+        // Format action
+        function doFormat() {
+            const sql = input.value;
+            if (!sql.trim()) {
+                output.innerHTML = '<span class="empty-state">Formatted SQL will appear here</span>';
+                lastResult = '';
+                updateStatus('');
+                return;
+            }
+            const formatted = formatSQL(sql);
+            lastResult = formatted;
+            output.innerHTML = highlightSQL(formatted);
+            updateStatus(formatted);
+            showToast('SQL formatted');
+        }
+
+        // Minify action
+        function doMinify() {
+            const sql = input.value;
+            if (!sql.trim()) return;
+            const minified = minifySQL(sql);
+            lastResult = minified;
+            output.innerHTML = highlightSQL(minified);
+            updateStatus(minified);
+            showToast('SQL minified');
+        }
+
+        // Event listeners
+        document.getElementById('formatBtn').addEventListener('click', doFormat);
+        document.getElementById('minifyBtn').addEventListener('click', doMinify);
+
+        document.getElementById('copyBtn').addEventListener('click', () => {
+            if (!lastResult) return;
+            navigator.clipboard.writeText(lastResult).then(() => showToast('Copied to clipboard'));
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if (!lastResult) return;
+            const blob = new Blob([lastResult], { type: 'text/sql' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'formatted.sql';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('Downloaded formatted.sql');
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            input.value = '';
+            output.innerHTML = '<span class="empty-state">Formatted SQL will appear here</span>';
+            lastResult = '';
+            updateStatus('');
+        });
+
+        document.getElementById('pasteBtn').addEventListener('click', async () => {
+            try {
+                const text = await navigator.clipboard.readText();
+                input.value = text;
+                doFormat();
+            } catch {
+                showToast('Could not read clipboard');
+            }
+        });
+
+        document.getElementById('sampleBtn').addEventListener('click', () => {
+            input.value = `SELECT u.id, u.name, u.email, COUNT(o.id) AS order_count, SUM(o.total) AS total_spent FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at >= '2024-01-01' AND u.status = 'active' AND o.total > 50 GROUP BY u.id, u.name, u.email HAVING COUNT(o.id) > 3 ORDER BY total_spent DESC LIMIT 100;`;
+            doFormat();
+        });
+
+        // Indent setting
+        document.getElementById('indentSelect').addEventListener('change', (e) => {
+            const val = e.target.value;
+            settings.indent = val === 'tab' ? '\t' : ' '.repeat(parseInt(val));
+            if (input.value.trim()) doFormat();
+        });
+
+        // Keyword case toggles
+        document.querySelectorAll('.toggle-btn[data-case]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.toggle-btn[data-case]').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                settings.keywordCase = btn.dataset.case;
+                if (input.value.trim()) doFormat();
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                doFormat();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'M') {
+                e.preventDefault();
+                doMinify();
+            }
+        });
+
+        // Auto-format on input with debounce
+        let debounceTimer;
+        input.addEventListener('input', () => {
+            updateStatus(input.value);
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                if (input.value.trim()) doFormat();
+            }, 500);
+        });
+
+        // Load saved preferences
+        const savedIndent = localStorage.getItem('sqlf_indent');
+        const savedCase = localStorage.getItem('sqlf_case');
+        if (savedIndent) {
+            document.getElementById('indentSelect').value = savedIndent;
+            settings.indent = savedIndent === 'tab' ? '\t' : ' '.repeat(parseInt(savedIndent));
+        }
+        if (savedCase) {
+            settings.keywordCase = savedCase;
+            document.querySelectorAll('.toggle-btn[data-case]').forEach(b => {
+                b.classList.toggle('active', b.dataset.case === savedCase);
+            });
+        }
+
+        // Save preferences on change
+        document.getElementById('indentSelect').addEventListener('change', (e) => {
+            localStorage.setItem('sqlf_indent', e.target.value);
+        });
+        document.querySelectorAll('.toggle-btn[data-case]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                localStorage.setItem('sqlf_case', btn.dataset.case);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
