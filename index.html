@@ -166,6 +166,8 @@
             font-family: var(--font-body);
             background: var(--bg);
             color: var(--text-primary);
+        }
+        .app-wrap {
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -584,6 +586,7 @@
 </head>
 <body>
 
+    <div class="app-wrap">
     <!-- Header -->
     <header class="header">
         <a href="/" class="header-brand">freesqlformatter.app</a>
@@ -662,6 +665,7 @@
         <span id="statusLeft">Ready</span>
         <span>All processing happens in your browser — nothing uploaded</span>
     </footer>
+    </div><!-- /.app-wrap -->
 
     <!-- Freesuite Badge -->
     <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener">
